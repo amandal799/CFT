@@ -195,7 +195,16 @@ def filterProblemsByName(pname,problems):
 				break
 	return problems_
 
-
+def getStatement(url):
+	response = getData(url)
+	if response is None:
+		return 1
+	try:
+		soup = bsoup(response.content,'html.parser')
+		return soup.find(class_='problem-statement')
+	except Exception :
+		return None
+		
 def getProblemStatement(attrs):
 	error = []
 	pstmts_ = []
@@ -208,31 +217,25 @@ def getProblemStatement(attrs):
 			except Exception:
 				pass
 
-		url ="http://codeforces.com/problemset/problem/"
+		url ="http://codeforces.com/contest/"
 		id_ =''
+		index = ''
 		try:
 			id_ = prblm[0:-1]
 			index = prblm[-1]
-			url += id_+'/'+index
+			url += id_+'/problem/'+index
 		except Exception:
 			error.append(prblm + ' is not a valid problem id') 
 			continue
-
-		response = getData(url)
-		if response is None:
-			print("Please check you net connection")
+		pstmt =getStatement(url)
+		if type(pstmt) == type(1):
+			error.append("Please check your net connection")
 			return pstmts_,error
-		pstmt = ''
-		try:
-			soup = bsoup(response.content,'html.parser')
-			pstmt = soup.find(class_='problem-statement')
-		except Exception:
-			continue
 
-		if type(pstmt) == type(None):
-			error.append("Perhapes problem with id "+prblm +" doesn't exist")
-			continue
-			
+		if type(pstmt) == type(None):	
+			error.append("Perhapes problems with id "+prblm+" does not exist")
+			continue	
+		
 		if prblm not in problem.__problems__:
 			prblm = createProblem_(pstmt,id_)
 			try:
@@ -249,4 +252,4 @@ def getProblemStatement(attrs):
 			error.append("No problem statement found for id "+prblm)
 
 	return pstmts_,error
-	
+
