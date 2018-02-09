@@ -23,15 +23,15 @@ Make sure you run it with python3 and you have all the necessary packages instal
 > it can be followed by any combination of the following commands:-
 1. **{-u | -h}** followed by any user's handle
 >
-* **{-tags}** followed by tags separated by space
+2. **{-tags}** followed by tags separated by space
  >
-* **{-type}** followed by type of questions in codeforces like A,B,C,D (case-insensitive)
+3. **{-type}** followed by type of questions in codeforces like A,B,C,D (case-insensitive)
 >
-* **{-pname}** followed by a list problem names
+4. **{-pname}** followed by a list problem names
   * if you want all the problems which contain **socks** in it the you just write **plist -pname socks**
   * if vanya , tables should be in the name of the problem then you should write vanya&tables
 >  
-* **{-verdict}** followed by ok,wrong,failed,etc for user-specific problems
+5. **{-verdict}** followed by ok,wrong,failed,etc for user-specific problems
 
 > For Problem statement :-  
 * **pstmt**
