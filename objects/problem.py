@@ -217,9 +217,14 @@ class problem(object):
 	def print_(self,pflag_=False):
 		print('')
 		try:
-			print('*	'+str(self.id)+self.index+' : '+self.title)
-		except Exception :
-			pass
+			from termcolor import colored
+			print(colored('*	'+str(self.id)+self.index+' : '+self.title,'yellow'))
+		except Exception:
+			try:
+				print('*	'+str(self.id)+self.index+' : '+self.title,'yellow')
+			except Exception :
+				pass
+	
 		if pflag_ == False:
 			return
 		try:

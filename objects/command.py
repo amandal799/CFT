@@ -78,6 +78,6 @@ class command(object):
 
 		self.__masterCmdFunc__ = {'plist':self.__executePlist__,'pstmt':self.__executePstmt__,'exit':self.__exit__,'quit':self.__exit__,'close':self.__exit__,'clear':self.__clear__}
 
-		self.__cmdAttr__['plist'] = {'-u':[],'-h':[],'-tags':[],'-type':[],'-print':[],'-pname':[]}
+		self.__cmdAttr__['plist'] = {'-u':[],'-h':[],'-tags':[],'-type':[],'-print':[],'-pname':[],'-verdict':[]}
 		self.__cmdAttr__['pstmt'] = {'-pid':[],'-pname':[]} 
 	

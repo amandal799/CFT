@@ -163,7 +163,17 @@ def getProblems(attrs):
 		if response['status'] == 'OK':
 			result = response['result']
 			for p in result:
-				prblm = createProblem(p['problem'])
+				prblm = None
+				if(len(attrs['-verdict']))>0 and 'verdict' in p:
+					for v in attrs['-verdict']:
+						V = v.upper()
+						if V in p['verdict']:
+							prblm = createProblem(p['problem'])
+							break
+						else:
+							continue
+				else:
+					prblm = createProblem(p['problem'])
 				if prblm is not None:
 					problems_[prblm] = ''
 			problems_ = filterProblems(attrs,problems_)
