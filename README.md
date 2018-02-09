@@ -43,7 +43,7 @@ Make sure you run it with python3 and you have all the necessary packages instal
 >
 1. To get all the problems with tag dp and dfs and of type D and E solved by tourist  
   #### **command**  
-    **_plist -u tourist -tags dp dfs -type D E_**
+  **_plist -u tourist -tags dp dfs -type D E_**
 >
 2. To get all the problems which contain pokenmon in it  
 #### **command**  
@@ -51,4 +51,4 @@ Make sure you run it with python3 and you have all the necessary packages instal
 >
 3. To get the statement of problem 917D
 #### **command**
-_**pstmt -pid 917D**_
+**_pstmt -pid 917D_**
