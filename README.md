@@ -45,9 +45,9 @@ Make sure you run it with python3 and you have all the necessary packages instal
   #### **command**  
   **_plist -u tourist -tags dp dfs -type D E_**
 >
-2. To get all the problems which contain pokenmon in it  
+2. To get all the problems which contain pokemon in it  
 #### **command**  
-**_plist -pname pokenmon_**
+**_plist -pname pokemon_**
 >
 3. To get the statement of problem 917D
 #### **command**
