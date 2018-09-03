@@ -1,4 +1,4 @@
-## **CF-WITH-TERMINAL**
+## **CFT**
 
 > A terminal based application for extracting information from codeforces related to problems , contests , users, etc.
 
